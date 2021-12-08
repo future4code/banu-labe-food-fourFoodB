@@ -1,0 +1,6 @@
+// export const token = localStorage.getItem("token")
+
+export const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZBOGlWQ2RVZ3k2R01OSE1BU1AxIiwibmFtZSI6IkFzdHJvZGV2IiwiZW1haWwiOiJhc3Ryb2RldkBmdXR1cmU0LmNvbSIsImNwZiI6IjEyMzQ1NjEyMzc2NSIsImhhc0FkZHJlc3MiOnRydWUsImFkZHJlc3MiOiJSdWEgZGEgbW9vY2EsIDIwMCAtIE1vb2NhIiwiaWF0IjoxNjM4OTE5OTc5fQ.-f0MR8b262zWyZRgk61FqsvkxKlJQ9tOREBD8jusLXA"
+
+
+export const urlBase = 'https://us-central1-missao-newton.cloudfunctions.net/fourFoodB'
