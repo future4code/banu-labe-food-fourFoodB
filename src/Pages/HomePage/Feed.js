@@ -12,24 +12,50 @@ const Feed = () => {
         isLoading: false,
         error: ''
     })
+    const [searchRestaurant, setSearchRestaurant] = useState({
+        category: '',
+        name: ''
+    })
 
     useEffect(() => {
         setRestaurants({...restaurants, isLoading: true})
 
-        const header = {
-            "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZBOGlWQ2RVZ3k2R01OSE1BU1AxIiwibmFtZSI6IkFzdHJvZGV2IiwiZW1haWwiOiJhc3Ryb2RldkBmdXR1cmU0LmNvbSIsImNwZiI6IjEyMzQ1NjEyMzc2NSIsImhhc0FkZHJlc3MiOnRydWUsImFkZHJlc3MiOiJSdWEgZGEgbW9vY2EsIDIwMCAtIE1vb2NhIiwiaWF0IjoxNjM4OTIwMTA0fQ.wdhmB2CIj17KH4TBc_Ehm36I0Ux7op_XhBrhrR0gUsY",
-            "Content-Type" : "application/json"
-        }
-
         axios
-            .get(`${urlBase}/restaurants`, header)
+            .get(`${urlBase}/restaurants`, {
+                headers: {
+                    auth: token
+                }
+            })
             .then((res) => {
-                console.log('res', res)
+                setRestaurants({...restaurants, data: res.data.restaurants, isLoading: false})
             })
             .catch((err)  => {
                 console.log('er', err)
             })
     }, [])
+
+    const restaurantsRender = restaurants.data && restaurants.data.filter((iten) =>{
+        if(iten.name.toLowerCase().includes(searchRestaurant.name.toLowerCase())) return true
+        return false
+    })
+    .filter((iten) => {
+        if(iten.category.toLowerCase().includes(searchRestaurant.category.toLocaleLowerCase())) return true
+        return false
+    })
+    .map((iten) => {
+        return  (
+            <div key= {iten.id}>
+                <img src= {iten.logoUrl} alt= 'Logo do Restaurante' />
+                <h4>{iten.name}</h4>
+                <p>{iten.deliveryTime} min</p>
+                <p>Frete R${iten.shipping},00</p>
+
+
+            </div>
+        )
+    })
+
+    console.log(searchRestaurant)
 
     return (
         <div>
@@ -38,7 +64,22 @@ const Feed = () => {
             </header>
 
             <main>
-        
+                <input 
+                    placeholder= 'Restaurante' 
+                    value= {searchRestaurant.name}
+                    onChange= {(e) => setSearchRestaurant(e.target.value)}
+                />
+                {restaurants.data && restaurants.data.map((iten)=>{
+                    return(
+                        <p 
+                            key={iten.id}  
+                            onClick={() => {setSearchRestaurant({...searchRestaurant, category: iten.category})}}
+                        >
+                            {iten.category}
+                        </p>
+                    )
+                })}
+                {restaurantsRender}
             </main>
 
             <footer>
