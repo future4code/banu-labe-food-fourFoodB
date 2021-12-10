@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+
+import { BrowserRouter } from 'react-router-dom';   
 
 import { AuthProvider } from './context/AuthContext';
 
@@ -12,6 +12,7 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <Routes />
+        <Feed/>
       </AuthProvider>
     </BrowserRouter>
   );
