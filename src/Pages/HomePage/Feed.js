@@ -67,19 +67,24 @@ const Feed = () => {
                 <input 
                     placeholder= 'Restaurante' 
                     value= {searchRestaurant.name}
-                    onChange= {(e) => setSearchRestaurant(e.target.value)}
+                    onChange= {(e) => setSearchRestaurant({...searchRestaurant, name: e.target.value})}
                 />
-                {restaurants.data && restaurants.data.map((iten)=>{
-                    return(
-                        <p 
-                            key={iten.id}  
-                            onClick={() => {setSearchRestaurant({...searchRestaurant, category: iten.category})}}
-                        >
-                            {iten.category}
-                        </p>
-                    )
-                })}
-                {restaurantsRender}
+                <div>
+                    <p onClick={() => {setSearchRestaurant({...searchRestaurant, category: ''})}}>Tudo</p>
+                    {restaurants.data && restaurants.data.map((iten)=>{
+                        return(
+                            <p 
+                                key={iten.id}  
+                                onClick={() => {setSearchRestaurant({...searchRestaurant, category: iten.category})}}
+                            >
+                                {iten.category}
+                            </p>
+                        )
+                    })}
+                </div>
+                {restaurants.isLoading && <p>Carregando</p>}
+                {!restaurants.isLoading && restaurants.error && <p>Ocorreu um erro...</p>}
+                {!restaurants.isLoading && restaurants.data && restaurantsRender}
             </main>
 
             <footer>
