@@ -67,15 +67,15 @@ const Feed = () => {
                 <input 
                     placeholder= 'Restaurante' 
                     value= {searchRestaurant.name}
-                    onChange= {(e) => setSearchRestaurant({...searchRestaurant, name: e.target.value})}
+                    onChange= {(e) => setSearchRestaurant({...searchRestaurant, name: e.target.value, category: ''})}
                 />
                 <div>
-                    <p onClick={() => {setSearchRestaurant({...searchRestaurant, category: ''})}}>Tudo</p>
+                    <p onClick={() => {setSearchRestaurant({...searchRestaurant, category: '', name: ''})}}>Tudo</p>
                     {restaurants.data && restaurants.data.map((iten)=>{
                         return(
                             <p 
                                 key={iten.id}  
-                                onClick={() => {setSearchRestaurant({...searchRestaurant, category: iten.category})}}
+                                onClick={() => {setSearchRestaurant({...searchRestaurant, category: iten.category, name: ''})}}
                             >
                                 {iten.category}
                             </p>
