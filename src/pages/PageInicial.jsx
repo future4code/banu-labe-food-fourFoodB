@@ -6,6 +6,8 @@ export const PageInicial = () => {
     <div>
       <Link to='/'>Home</Link> <Link to='/cart'>Cart</Link>{' '}
       <Link to='/account'>Acount</Link> <Link to='/login'>Login</Link>
+      <Link to='/signup'>Cadastro</Link> 
+      <Link to='/signup/newaddress'>Endereço</Link>
     </div>
   );
 };
