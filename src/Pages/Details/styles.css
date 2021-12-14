@@ -1,0 +1,187 @@
+.Bar {
+    width: 22.5rem;
+    height: 4rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    text-align: center;
+}
+.RestaurantInfo{
+    display: grid;
+    width: 22.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.RestaurantImage {
+    width: 22.5rem;
+    height: 7.5rem;
+    margin: 1.063rem 1rem 0.75rem;
+    object-fit: contain;
+}
+.Restaurante {
+    max-width: 22.5rem;
+    height: 50vh;
+}
+
+.RestauranteName {
+    width: 20.5rem;
+    height: 1.125rem;
+    margin: 0.75rem 1rem 0.5rem;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.39px;
+    color: #e8222e;
+    grid-column: 1 / 1;
+    grid-row: 1 / span 1;
+}
+
+.DeliveryTime {
+    width: 6.5rem;
+    height: 1.125rem;
+    margin: 0.5rem 0.5rem 0.625rem 1rem;
+    font-family: Roboto;
+    font-size: 1rem;
+    letter-spacing: -0.39px;
+    color: #b8b8b8;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    
+}
+
+.Shipping {
+    width: 6.5rem;
+    height: 1.125rem;
+    margin: 0.5rem 8rem 0.625rem 0.5rem;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.39px;
+    color: #b8b8b8;
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    
+}
+
+.Address {
+    width: 20.5rem;
+    height: 1.125rem;
+    margin: 0.625rem 1rem 1rem;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.39px;
+    color: #b8b8b8;
+    grid-column: 1 / span 3;
+    grid-row: 3 / span 1;
+    
+  }
+
+.PrincipaisCopy {
+    width: 20.5rem;
+    height: 1.125rem;
+    margin: 1rem 1rem 0.5rem;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.39px;
+    color: black;
+}
+
+.PathCopy {
+    width: 20.5rem;
+    height: 0.063rem;
+    margin: 0 0 0.438rem;
+    border: solid 1px black;
+}
+
+.ProductCard{
+    width: 22.5rem;
+    height: 7.5rem;
+    padding: 0;
+    margin: 1rem;
+    border: solid 1px #b8b8b8;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+
+
+.ItemName {
+    width: 9.438rem;
+    height: 1.125rem;
+    margin: 10% 10% 0.5rem 1rem;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.39px;
+    color: #e8222e;
+    grid-column: 2 / 3;
+    grid-row: 1 / span 1;
+}
+
+.ItemDescription {
+    width: 9.438rem;
+    height: 1.875rem;
+    margin: 0.5rem 0.5rem 0.25rem;
+    font-family: Roboto;
+    font-size: 0.75rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.29px;
+    color: #b8b8b8;
+    grid-column: 2 / 3;
+    grid-row: 2 / span 1;
+  }
+
+  .Price {
+    width: 7.375rem;
+    height: 1.188rem;
+    margin: 0.25rem 0.5rem 0.938rem 1rem;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.39px;
+    color: black;
+    grid-column: 2 / 3;
+    grid-row: 3 / span 1;
+  }
+
+  .ProductImage {
+    width: 6rem;
+    height: 7rem;
+    padding: 0;
+    object-fit: contain;
+    grid-row: 1/ span 3;
+    grid-column: 1/ span 1;
+  }
+
+  .BotaoAdicionar {
+    width: 5.625rem;
+    height: 1.938rem;
+    grid-column: 3 / span 1;
+    grid-row: 3 / span 1;
+    justify-self: start;
+  }

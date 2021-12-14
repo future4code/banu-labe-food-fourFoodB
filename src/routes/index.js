@@ -1,12 +1,14 @@
 import React from 'react';
 import { Routes as Router, Route } from 'react-router-dom';
-import { Account } from '../pages/Account';
-import { Carrinho } from '../pages/Cart';
-import { Login } from '../pages/Login';
-import { PageInicial } from '../pages/PageInicial';
+import { Account } from '../Pages/Account';
+import { Carrinho } from '../Pages/Cart';
+import { Login } from '../Pages/Login';
+import { PageInicial } from '../Pages/PageInicial';
 import PrivateRoute from './PrivateRoutes';
-import Cadastro from '../pages/SignUp/Cadastro';
-import CadastroEndereco from '../pages/SignUp/Address/CadastroEndereco';
+import Cadastro from '../Pages/SignUp/Cadastro';
+import CadastroEndereco from '../Pages/SignUp/Address/CadastroEndereco';
+import RestaurantDetails from '../Pages/Details/RestaurantDetails';
+import Feed from '../Pages/HomePage/Feed';
 
 
 
@@ -18,6 +20,8 @@ export const Routes = () => {
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Cadastro />} />
       <Route path='/signup/newaddress' element={<CadastroEndereco/>} />
+      <Route path='/restaurant/:id' element={<RestaurantDetails/>} />
+      <Route path='/feed' element={<Feed/>} />
   
       {/* Rotas Protegidas */}
     
