@@ -5,8 +5,16 @@ import shoppingcart from '../../img/shoppingcart.svg'
 import avatar from '../../img/avatar.svg'
 import axios from "axios"
 import { token, urlBase } from "../../constants/constants"
+import { useNavigate } from "react-router-dom"
 
 const Feed = () => {
+
+    const navigate = useNavigate()
+
+    const goToDetails = (id) => {
+        navigate(`/restaurant/${id}`)
+    }
+
     const [restaurants, setRestaurants] = useState({
         data: '',
         isLoading: false,
@@ -44,7 +52,7 @@ const Feed = () => {
     })
     .map((iten) => {
         return  (
-            <div key= {iten.id}>
+            <div key= {iten.id} onClick={() => goToDetails(iten.id)}>
                 <img src= {iten.logoUrl} alt= 'Logo do Restaurante' />
                 <h4>{iten.name}</h4>
                 <p>{iten.deliveryTime} min</p>
