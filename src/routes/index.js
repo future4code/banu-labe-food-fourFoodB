@@ -20,8 +20,7 @@ export const Routes = () => {
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Cadastro />} />
       <Route path='/signup/newaddress' element={<CadastroEndereco/>} />
-      <Route path='/restaurant/:id' element={<RestaurantDetails/>} />
-      <Route path='/feed' element={<Feed/>} />
+  
   
       {/* Rotas Protegidas */}
     
@@ -41,6 +40,24 @@ export const Routes = () => {
             <Carrinho />
           </PrivateRoute>
           // Trocar componente Carrinho
+        }
+      />
+      <Route
+        path='/restaurants'
+        element={
+          <PrivateRoute>
+            <Feed />
+          </PrivateRoute>
+          // Trocar componente Feed
+        }
+      />
+      <Route
+        path='/restaurant/:id'
+        element={
+          <PrivateRoute>
+            <RestaurantDetails/>
+          </PrivateRoute>
+          // Trocar componente Detalhes do Restaurante
         }
       />
     </Router>
